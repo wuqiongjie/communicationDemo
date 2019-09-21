@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>SharedWoker Demo</title>
+</head>
+<body>
+  <h1>SharedWorker Demo page 2</h1>
+  <button onclick="seconde">发送消息</button>
+</body>
+<script>
+  var myWorker1 = new SharedWorker("scripts/sharedWorker.js");
+  myWorker1.port.onmessage = function(e) {
+    var result = e.data;  // 共享推过来的数据
+    console.log(result);
+  }
+  
+  funtion seconde() {
+    myWorker1.port.postMessage('i am from page2');
+  }
+</script>
+</html>
