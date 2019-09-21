@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>SharedWoker Demo</title>
+</head>
+<body>
+  SharedWorker Demo page 1
+</body>
+<script>
+  var myWorker1 = new SharedWorker("scripts/sharedWorker.js");
+  myWorker1.port.onmessage = function(e) {
+    var result = e.data;  // 共享推过来的数据
+    console.log(result);
+  }
+</script>
+</html>
