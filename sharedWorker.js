@@ -8,10 +8,5 @@ onconnect = function(e) {
       eElement.postMessage(e.data);
     }
   });
-//   port.addEventListener('message', function(e) {
-//     var workerResult = 'Result: ' + e.data;
-//     port.postMessage(workerResult);
-//   });
-  
   port.start();
 }
