@@ -11,13 +11,14 @@
   <button onclick="first">发送消息</button>
 </body>
 <script>
-  var myWorker1 = new SharedWorker("sharedWorker.js");
+  var myWorker1 = new SharedWorker("./sharedWorker.js");
   myWorker1.port.onmessage = function(e) {
     var result = e.data;  // 共享推过来的数据
     console.log(result);
   }
   
   function first() {
+    console.log(myWorker1);
     myWorker1.port.postMessage('i am from page1');
   }
 </script>
