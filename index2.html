@@ -13,6 +13,8 @@
 <script>
   var myWorker2 = new SharedWorker("./sharedWorker.js");
   var btn = document.getElementById("sendMsg");
+   
+  myWorker2.port.start()
   
   btn.addEventListener("click", function(event) {
     console.log(myWorker2);
