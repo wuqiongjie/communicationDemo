@@ -14,6 +14,8 @@
   var myWorker1 = new SharedWorker("./sharedWorker.js");
   var btn = document.getElementById("sendMsg");
   
+  myWorker1.port.start()
+  
   btn.addEventListener("click", function(event) {
     console.log(myWorker1);
     myWorker1.port.postMessage('i am from page1');
